@@ -25,8 +25,12 @@ console.log([name,age,accountNO,ifrunning,average,find,box,]);
 
 
  //2.Non-Primitives->object,array,function
-
- let cricketer={
+//object->key value pair
+//array->collection of similar or different data types
+//function->block of code which perform a specific task
+//data types in js are dynamic means we can change the data type of variable at runtime
+//datatype of object and array is object ,function is function
+ const cricketer={
     name:"virat",
     age:35,
     country:"india",
@@ -40,11 +44,11 @@ console.log([name,age,accountNO,ifrunning,average,find,box,]);
  console.log("array");//object
  console.log(arr);
 
- function add(a,b){
+ const addtion=function add(a,b){
     return a+b;
  }
  console.log("function");
- console.log(add(5,3));
+ console.log(addtion(5,3));
  
  
  
