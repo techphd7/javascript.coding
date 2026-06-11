@@ -54,3 +54,13 @@ const Users=[
 // console.log(Object.entries(tinderuser));
 
 //console.log(tinderuser.hasOwnProperty('isLoggedIn'));//true
+
+const course={
+    courseName:"JavaScript",
+    price:999,
+    courseInstructor:"Prabhanshu",
+}
+
+//course.courseInstructor="John";//updating existing property
+const{courseInstructor:ci}=course;//object destructuring to extract property value into a variable
+console.log(ci);
