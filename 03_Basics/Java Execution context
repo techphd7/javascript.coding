@@ -1,0 +1,29 @@
+JAVASCRIPT EXECUTION CONTEXT
+
+{}->global EXECUTION CONTEXT <-this
+
+->global EC
+->function EC
+->Eval EC
+
+{}->memory creation phase
+{}->execution phase
+
+
+1.Global Execution -> this
+2.Memory Creation phase
+->val1=undefined
+->val2=undefined
+->addnum=defination
+->result1=undefined
+->result2=>umdefined
+3.Execution phase
+->val1=10
+->val2=20
+->addNum=>p[new variable environment+execution thread]
+again same if another function call
+4->return to global EC
+
+
+
+
