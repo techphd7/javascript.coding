@@ -116,15 +116,3 @@ codingInfo.forEach((item)=>{
     
 })
 
-const num=[1,32,3,54,5,6,7,8,9]
-
-const getnum=num.filter((num)=> num>6)//imp filter use
-//console.log(getnum);//paranthesis m return nhi karna padta
-
-//object wale curly bracket m return likhna padta hai
-
-const getnumber=num.filter((num)=>{
-    return num<7;
-     
-})
-console.log(getnumber);
