@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH learner</title>
+</head>
+<body style="background-color: rgb(37, 36, 36); color:aliceblue">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+       const li= document.createElement('li')
+        li.innerHTML=`${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("Typescript")
+
+    function addOptimiseLang(langName){
+        const li=document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+
+    }
+    addOptimiseLang('goLang')
+    //Edit
+    const secondLang=document.querySelector('li:nth-child(2)')
+        // secondLang.innerHTML="mojo"
+      const li=  document.createElement('li')
+      li.textContent="cpp"
+      secondLang.replaceWith(li)
+
+      //edit
+      const firstlang=document.querySelector('li:first-child')
+      firstlang.outerHTML=`<li>C sharp</li>`
+
+      //remove 
+      const lastLang=document.querySelector('li:last-child')
+      lastLang.remove()
+    
+</script>
+</html>
