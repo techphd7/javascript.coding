@@ -185,4 +185,37 @@ function newGame() {
 }
 
 ```
+#project5-key pressed
+``` javascript
+document.addEventListener('keydown', function (e) {
+  document.getElementById('insert').textContent =
+    'key pressed:' + e.key + '|code :' + e.code;
+});
+```
+#project6-background color change every second
+``` javascript
+
+let intervalId;
+function randomColor() {
+  const color = Math.floor(Math.random() * 16777215).toString(16);
+  return '#' + color;
+}
+
+document.getElementById("start").addEventListener('click', function (e) {
+  if (!intervalId) {
+    intervalId = setInterval(() => {
+      document.body.style.backgroundColor = randomColor();
+    }, 500);
+  }
+});
+
+document.getElementById('stop').addEventListener('click', function (e) {
+  intervalId = null;
+  clearInterval(intervalId);
+  
+});
+```
+#project7 
+```javascript
+
 
