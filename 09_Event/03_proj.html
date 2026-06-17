@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(116, 239, 233);"><h1>Project By Er.Prabhanshu Pawar</h1>
+    <img src="photo/image copy 2.png" alt="photo">
+    <div>
+
+        <ul>
+            <li>Drafting</li>
+            <li>Planning</li>
+            <li>Surveying</li>
+        </ul>
+    </div>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+
+    <script>
+      let myName;
+      let setIn;
+        const printing=document.querySelector("#start").addEventListener("click",function(){
+           if(!myName){ myName=  setInterval(function(e){
+            console.log("prabhanshu",Date.now());
+            setIn=document.querySelector('ul').innerHTML="<h1>Hello setting interval</h1>"
+        },1000) 
+    }
+        
+        })
+
+       
+    const stopping=document.querySelector("#stop").addEventListener("click",function(){
+         
+       const interval=clearInterval(myName)
+       const interval1=clearInterval(setIn)
+        clearInterval(interval);
+        myName=null;
+       setIn=document.querySelector('ul').innerHTML="<h1>Stopped</h1>"
+        
+        })
+       
+    </script>
+</body>
+</html>

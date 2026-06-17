@@ -187,33 +187,50 @@ function newGame() {
 ```
 #project5-key pressed
 ``` javascript
-document.addEventListener('keydown', function (e) {
-  document.getElementById('insert').textContent =
-    'key pressed:' + e.key + '|code :' + e.code;
+const insert = document.getElementById('insert');
+
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `<div class='color'><table>
+<tr>
+  <th>Key</th>
+  <th>keycode</th>
+  <th>code</th>
+</tr>
+<tr>
+  <td>${e.key===" "?"Space":e.key}</td>
+  <td>${e.keyCode}</td>
+  <td>${e.code}</td>
+</tr>
+
+</table>
+</div>`;
 });
+
 ```
 #project6-background color change every second
 ``` javascript
 
-let intervalId;
-function randomColor() {
-  const color = Math.floor(Math.random() * 16777215).toString(16);
-  return '#' + color;
+function randomColor(){
+  const hex=Math.floor(Math.random() *1666216)+1;
+  return "#"+hex;
 }
+let color;
+ const start=document.querySelector("#start").addEventListener("click",function(){
+   if(!color){
+     color=setInterval(function(){
+       document.body.style.backgroundColor=randomColor();
+       console.log("color")
+     },1000)
+     
+   }
 
-document.getElementById("start").addEventListener('click', function (e) {
-  if (!intervalId) {
-    intervalId = setInterval(() => {
-      document.body.style.backgroundColor = randomColor();
-    }, 500);
-  }
-});
+ });
 
-document.getElementById('stop').addEventListener('click', function (e) {
-  intervalId = null;
-  clearInterval(intervalId);
-  
-});
+ const stop=document.querySelector("#stop").addEventListener("click",function(){
+   clearInterval(color);
+   color=null;
+   console.log("stopped");
+ });
 ```
 #project7 
 ```javascript
