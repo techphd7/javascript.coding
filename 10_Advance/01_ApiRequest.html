@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(25, 25, 25); color:white;">
+
+<h1>AJEX </h1>
+    <ul>
+    <h4>0 (UNSENT): The XHR object has been created, but the open() method has not been called yet.</h4>
+    <h4>1 (OPENED): The open() method has been called, but the send() method has not yet been called to dispatch the request.</h4>
+    <h4>2 (HEADERS_RECEIVED): The send() method has been e response headers are received.</h4>
+    <h4>3 (LOADING): The server is processing the request, and the response body is actively being downloaded.</h4>
+    <h4>4 (DONE): The operation is complete. The data transfer has finished,and the server's response is ready to be used by JavaScript.</h4>
+</ul>
+
+  
+
+</body>
+<script>
+    const requestUrl='https://randomuser.me/api/';
+    const xhr=new XMLHttpRequest();
+    xhr.open('GET',requestUrl)
+    xhr.onreadystatechange=function(){
+      console.log(xhr.readyState); 
+      if (xhr.readyState===4) {
+      const data=JSON.parse(this.responseText);//data type is string  most of time url is aata hai vo string m aata hai
+       
+      console.log(data.results);
+      const picture=data.results[0].picture.medium;
+      const age=data.results[0].dob.age;
+      const name=data.results[0].name;
+      const fullName=`${name.title} ${name.first} ${name.last} `
+
+     document.body.innerHTML +=`<ul><img src=${picture} alt="photo"></ul>`
+     document.body.innerHTML +=`<ul>name=${fullName}</ul>`
+     document.body.innerHTML +=`<ul>age=${age}</ul>`
+
+
+      }  
+    }
+
+    xhr.send();
+</script>
+</html>
+
