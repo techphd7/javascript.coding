@@ -19,3 +19,10 @@ Object literals
 ->Abstraction=hide details->use fetch
 ->Polymorphism=>Many forms
 ->Encapsulation=binding data and method
+
+
+Array-->object-->null
+
+string-->object-->null
+
+function-->object-->null
